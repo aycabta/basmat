@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.67])
 AC_INIT(basmat, 1.0, http://googology.wikia.com/wiki/User:Kyodaisuu)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 
