@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
   /* Read parameters */
   if (argc < 2) {
     printf ("Usage: %s ini [max] [opt] [step]\n", argv[0]);
+    printf ("See comment in the source: http://gyafun.jp/ln/basmat.cgi?ini=s\n");
     return 0;
   }
   bm  = argv[1];
