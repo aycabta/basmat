@@ -35,7 +35,8 @@ Created on Sep. 1, 2014.
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  int *a, *b, c=0, f, g, h, i=0, j, k, l, m, n=0, y, z, len, opt, step=0, maxstep;
+  int *a, *b, c=0, g, h, i=0, j, l, m, y, len, opt;
+  long f, k, n=0, z, step=0, maxstep;
   char *bm;
 
   /* Read parameters */
@@ -44,7 +45,7 @@ int main(int argc, char *argv[]) {
     return 0;
   }
   bm  = argv[1];
-  z = (argc > 2)? atoi(argv[2]): 20;
+  z = (argc > 2)? atol(argv[2]): 20;
   if (z < 1) z = 1;
   opt = (argc > 3)? atoi(argv[3]): 1;
   maxstep = (argc > 4)? atoi(argv[4]): 0;
@@ -64,7 +65,7 @@ int main(int argc, char *argv[]) {
 
   /* Allocate array */
   a = malloc(sizeof(int) * y * z);
-  b = malloc(sizeof(int) * z);
+  b = malloc(sizeof(int) * y);
   if (a == NULL || b == NULL) {
     printf("Allocation failed.\n");
     exit(-1);
@@ -97,7 +98,7 @@ int main(int argc, char *argv[]) {
       for (j=0; j<c; j++) printf ("%d,", a[j + i*y]);
       printf ("%d)",a[c + i*y]);
     }
-    printf ("[%d]\n",n);
+    printf ("[%ld]\n",n);
 
     /* Calculation */
     if (opt == 2) n++;
@@ -120,11 +121,11 @@ int main(int argc, char *argv[]) {
     }
     k = (opt == 4)? f+g*(n-1): f+g*n;
     if (k > z) {
-      printf ("Length of sequence exceeds %d at next step.\n",z);
+      printf ("Length of sequence exceeds %ld at next step.\n",z);
       free(a); free(b); return 0;
     }
     if (maxstep && step++ >= maxstep) {
-      printf ("Maximum step of calculation %d has reached.\n",maxstep);
+      printf ("Maximum step of calculation %ld has reached.\n",maxstep);
       free(a); free(b); return 0;
     }
     while (f < k) {
@@ -132,6 +133,6 @@ int main(int argc, char *argv[]) {
       f++;
     }
   }
-  printf ("Finished. n = %d\n",n);
+  printf ("Finished. n = %ld\n",n);
   free(a); free(b); return 0;
 }
