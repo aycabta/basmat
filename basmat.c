@@ -16,7 +16,7 @@ opt: Calculation option. Default is 1.
 step: Maximum step of calculation. Default is 0 (no limit).
 
 Example:
-     basmat "(0,0)(1,1)]3]" 100000 2
+     basmat "(0,0)(1,1)[3]" 100000 2
      basmat "(0,0)(1,1)[3]" 10000000 4
      basmat "(0,0)(1,1)[3]" 13000 1 100000
 
