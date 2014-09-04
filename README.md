@@ -1,5 +1,4 @@
-
-Bashicu Matric Calculator
+Bashicu Matrix Calculator
 =========================
 
 [Web interface is available](http://gyafun.jp/ln/basmat.cgi).
